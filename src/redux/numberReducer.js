@@ -5,17 +5,19 @@ const initialNumber = {
 };
 
 const numberReducer = function (state = initialNumber, action) {
-  if (action.type === INCREMENT) {
-    return {
-      ...state,
-      number: state.number + 1,
-    };
-  }
-  if (action.type === DECREMENT) {
-    return {
-      ...state,
-      number: state.number - 1,
-    };
+  switch (action.type) {
+    case INCREMENT:
+      return {
+        ...state,
+        number: state.number + 1,
+      };
+    case DECREMENT:
+      return {
+        ...state,
+        number: state.number - 1,
+      };
+    default:
+      break;
   }
 
   return state;

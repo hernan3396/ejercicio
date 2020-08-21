@@ -4,7 +4,7 @@ import { increment, decrement } from "../redux/numberActionCreators";
 
 function Count() {
   const dispatch = useDispatch();
-  const number = useSelector((state) => state.number.number);
+  const number = useSelector((state) => state.operation.number);
   return (
     <>
       <button onClick={(e) => dispatch(increment())}>Increment</button>
